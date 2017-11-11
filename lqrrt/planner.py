@@ -14,8 +14,13 @@ import time
 import numpy as np
 import numpy.linalg as npl
 
-from tree import Tree
+from kdtree import Tree
 from constraints import Constraints
+
+# Allows us to import the C++ kd_tree into planner. 
+
+import ctypes
+print ctypes.CDLL('kd_tree.so').square(4)
 
 # Check scipy version for assume_sorted argument in interp1d
 import scipy.interpolate
