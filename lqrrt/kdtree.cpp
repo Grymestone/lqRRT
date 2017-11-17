@@ -156,10 +156,9 @@ Tree Treepy(PyObject* seed_state_py, PyObject* seed_lqr_py)
   return zed;
 }
 using namespace boost::python;
-BOOST_PYTHON_MODULE(_Tree)
+BOOST_PYTHON_MODULE(libkdtree)
 {
   class_<Tree>("Tree", init<MatrixXd, MatrixXd>(args("seed_state", "seed_lqr")))
-      // .def("Tree", &Tree::Tree)
       .def("add_node", &Tree::add_node)
       .def("trajectory", &Tree::trajectory)
       .def("climb", &Tree::climb)
